@@ -38,11 +38,12 @@ let lastActivityPromise=updateLastUserActivityTime()
 
 Promise.all([createPostPromise,createPostPromise1,lastActivityPromise]).then(()=>{
     console.log(posts)
-    console.log(lastActivity)
+    console.log('last seen:',lastActivity)
     return deleteLastPost()
 }).then((deletePost)=>{
     console.log(deletePost)
     console.log(posts)
+    console.log('last seen:',lastActivity)
 }).catch((error)=>{
     console.log(error)
 })
